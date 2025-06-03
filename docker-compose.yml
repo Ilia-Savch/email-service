@@ -1,0 +1,25 @@
+services:
+  app:
+    build: .
+    container_name: email-service-app
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+
+  db:
+    image: postgres:15
+    container_name: email-service-db
+    restart: always
+    env_file:
+      - .env.db
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
