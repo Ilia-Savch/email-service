@@ -1,0 +1,6 @@
+.venv
+.git
+.vscode
+.gitignore
+Makefile
+README.md
