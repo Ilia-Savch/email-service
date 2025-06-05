@@ -9,7 +9,7 @@ from alembic import context
 
 from core.models.base import Base
 from core.config import settings
-from core.models import user, access_token
+from core.models import user, access_token, email
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
