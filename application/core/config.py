@@ -38,6 +38,15 @@ class ApiV1Prefix(BaseModel):
     prefix: str = "/v1"
     users: str = "/users"
     auth: str = "/auth"
+    emails: str = "/emails"
+
+
+class EmailServer(BaseModel):
+    hostname: str = "mailpit"
+    port: int = 1025
+    start_tls: bool = False
+    smtp_user: str = None
+    smtp_password: str = None
 
 
 class ApiPrefix(BaseModel):
@@ -79,6 +88,7 @@ class Settings(BaseSettings):
     db: DatabaseConfig
     access_token: AccessToken
     logging: LoggingConfig = LoggingConfig()
+    email_server: EmailServer = EmailServer()
 
 
 settings = Settings()
